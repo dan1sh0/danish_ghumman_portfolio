@@ -8,6 +8,7 @@ import { OptimizedRoom } from './Optimized-room.jsx'
 import { Pokemon_room } from './Pokemon_room.jsx'
 import HeroLights from './HeroLights.jsx'
 import Particles from './Particles.jsx'
+import { Game_room } from './Gaming_room.jsx'
 
 function Loader() {
   const { progress } = useProgress()
@@ -19,7 +20,7 @@ const HeroExperience = () => {
     const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
     
     return (
-        <Canvas camera={{ position: [0, 5, 15], fov: 45 }}>
+        <Canvas camera={{ position: [0, 18, 30], fov: 45 }}>
           
             <HeroLights />
             <Particles  count = {100}/>
@@ -34,21 +35,20 @@ const HeroExperience = () => {
                 enablePan={true}
                 enableRotate={true}
                 autoRotate={false}
-                maxDistance={20}
-                minDistance={2}
+                maxDistance={40}
+                minDistance={10}
                 minPolarAngle={0}
                 maxPolarAngle={Math.PI}
                 target={[0, 1, 0]}
             />
 
             <group
-                  scale={isMobile? 0.7: 1}
-                  position={[0, -2.5, 0]}
+                  scale={isMobile ? 0.4 : 0.6}
+                  position={[0, -3, 0]}
                   rotation={[0, -Math.PI/4, 0]}
-
               >
                 <Suspense fallback={<Loader />}>
-                <Pokemon_room />
+                <Game_room/>
                 </Suspense>
               </group>
             

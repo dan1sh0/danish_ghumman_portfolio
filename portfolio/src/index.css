@@ -474,3 +474,18 @@ section {
 .card:hover::before {
   opacity: 1;
 }
+
+/* Feature Cards */
+
+.feature-section-spacing {
+  margin-top: 3rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .feature-section-spacing {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}

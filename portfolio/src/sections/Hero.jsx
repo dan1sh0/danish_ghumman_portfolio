@@ -5,6 +5,7 @@ import HeroExperience from "../components/HeroModels/HeroExperience.tsx";
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import AnimatedCounter from '../components/HeroModels/AnimatedCounter.jsx';
+import FeatureCards from './FeatureCards.jsx';
 
 const Hero = () => {
 
@@ -75,6 +76,7 @@ const Hero = () => {
             </div>
 
             <AnimatedCounter />
+
         </section>
     );
 };
