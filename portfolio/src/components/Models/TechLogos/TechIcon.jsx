@@ -3,7 +3,9 @@ import { useGLTF } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import { Environment } from '@react-three/drei'
 import { Float } from '@react-three/drei'
-
+import { OrbitControls } from '@react-three/drei'
+import { useEffect } from 'react'
+import * as THREE from 'three'
 // in this we will use the 3d models for the icons 
 // get the glb files for each icon 
 // add lighting 
@@ -15,6 +17,21 @@ const TechIcon = ({ model }) => {
 
     const scene = useGLTF(model.modelPath);
 
+    // way to change color of the model to fit the background better 
+    useEffect(() => {
+        if (model.name === 'Interactive Developer') {
+            scene.scene.traverse((child) => {
+                if (child.isMesh && child.name === 'Object_5') {
+                    child.material = new THREE.MeshStandardMaterial({
+                        color: 'white'
+
+                    });
+                }
+            });
+        }
+    }, [scene]);
+
+
     return (
         // canvas is the main container for the 3d model 
         // ambient light is the light that is always on 
@@ -25,7 +42,9 @@ const TechIcon = ({ model }) => {
 
         <Canvas>
             <ambientLight intensity={0.5} />
+            <directionalLight position={[5, 5, 5]} intensity={1} />
             <Environment preset="city" />
+            <OrbitControls enableZoom={false} />
             <Float speed={5.5} rotationIntensity={0.5} floatIntensity={2}>
                 {/* scale is the size of the model */}
                 {/* rotation is the rotation of the model */}
