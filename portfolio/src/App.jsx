@@ -1,7 +1,8 @@
 import Hero from './sections/Hero';
 import Navbar from './components/Navbar';
 import FeatureCards from './sections/FeatureCards';
-import './index.css';
+
+import ExperienceSection from './sections/ExperienceSection';
 
 const App = () => {
   return (
@@ -9,6 +10,7 @@ const App = () => {
       <Navbar />
       <Hero />
       <FeatureCards />
+      <ExperienceSection />
     </>
   )
 }
