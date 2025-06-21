@@ -28,9 +28,12 @@ const Navbar = () => {
                 {/* navLinks is an array of objects that contains the text and the href, points to our links. Change in index.js */}
                 <nav className="desktop">
                     <ul>
-                        {navLinks.map(({ link, name }) => (
+                        {navLinks.map(({ link, name, external }) => (
                             <li key={name} className='group'>
-                                <a href={link}>
+                                <a href={link}
+                                    target={external ? "_blank" : "_self"}
+                                    rel={external ? "noopener noreferrer" : ""}
+                                >
                                     <span>{name}</span>
                                     <span className='underline' />
 

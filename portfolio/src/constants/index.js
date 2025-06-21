@@ -13,6 +13,11 @@ const navLinks = [
     name: "Skills",
     link: "#skills",
   },
+  {
+    name: "Resume",
+    link: "/Ghumman_Danish_Resume.pdf",
+    external: true,
+  },
 
 ];
 
