@@ -1,6 +1,31 @@
 // place where we can have all static data that can be used in other files
 
+const education = [
+  {
+    school: 'Georgia Institute of Technology',
+    logo: '/images/gt_ed.png',
+    degree: 'Master of Science in Computer Science',
+    dates: '2025 - Present',
+    details: 'Specializing in Artificial Intelligence'
+  },
+  {
+    school: 'University of Pittsburgh',
+    logo: '/images/pitt_ed.png',
+    degree: 'Bachelor of Science in Computer Science',
+    dates: '2020 - 2024',
+    details: 'Graduated with Honors and Focus on Software Engineering'
+  }
+];
+
 const navLinks = [
+  {
+    name: "About",
+    link: "#about",
+  },
+  {
+    name: "Education",
+    link: "#education",
+  },
   {
     name: "Work",
     link: "#work",
@@ -153,14 +178,14 @@ const expCards = [
     title: "Software Engineer Intern",
     date: "May 2024 - August 2024",
     responsibilities: [
-      "Mitigated security vulnerabilities in PNC’s $950M Online Banking platform using Java, Cucumber, and Selenium, reducing risk for 11M users and boosting platform trust.",
+      "Mitigated security vulnerabilities in PNC's $950M Online Banking platform using Java, Cucumber, and Selenium, reducing risk for 11M users and boosting platform trust.",
       "Enhanced error handling in Angular and TypeScript to improve Cash Flow Insights for 300k users, increasing customer satisfaction.",
       "Boosted accessibility compliance by 30% through screen reader improvements using TypeScript and axe DevTools, enhancing inclusivity.",
       ,
     ],
   },
   {
-    review: "Adrian’s contributions to Docker's web applications have been outstanding. He approaches challenges with a problem-solving mindset.",
+    review: "Adrian's contributions to Docker's web applications have been outstanding. He approaches challenges with a problem-solving mindset.",
     imgPath: "/images/lrdc_full.png",
     logoPath: "/images/lrdc.png",
     title: "Software Engineer Intern",
@@ -171,7 +196,7 @@ const expCards = [
     ],
   },
   {
-    review: "Adrian’s work on Appwrite’s mobile app brought a high level of quality and efficiency. He delivered solutions that enhanced our mobile experience & meet our product goals.",
+    review: "Adrian's work on Appwrite's mobile app brought a high level of quality and efficiency. He delivered solutions that enhanced our mobile experience & meet our product goals.",
     imgPath: "/images/pittfull.png",
     logoPath: "/images/pitt.png",
     title: "Junior Salesforce Administrator",
@@ -203,7 +228,7 @@ const testimonials = [
     name: "Esther Howard",
     mentions: "@estherhoward",
     review:
-      "I can’t say enough good things about Adrian. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.",
+      "I can't say enough good things about Adrian. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.",
     imgPath: "/images/client1.png",
   },
   {
@@ -224,14 +249,14 @@ const testimonials = [
     name: "Marvin McKinney",
     mentions: "@marvinmckinney",
     review:
-      "Adrian was a pleasure to work with. He turned our outdated website into a fresh, intuitive platform that’s both modern and easy to navigate. Fantastic work overall.",
+      "Adrian was a pleasure to work with. He turned our outdated website into a fresh, intuitive platform that's both modern and easy to navigate. Fantastic work overall.",
     imgPath: "/images/client5.png",
   },
   {
     name: "Floyd Miles",
     mentions: "@floydmiles",
     review:
-      "Adrian’s expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He’s a true professional!",
+      "Adrian's expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He's a true professional!",
     imgPath: "/images/client4.png",
   },
   {
@@ -269,5 +294,6 @@ export {
   techStackIcons,
   techStackImgs,
   navLinks,
+  education,
 };
 

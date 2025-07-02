@@ -6,13 +6,17 @@ import ExperienceSection from './sections/ExperienceSection';
 import TechStack from './sections/TechStack';
 import Contact from './sections/Contact';
 import Footer from './sections/Footer';
+import AboutMe from './sections/AboutMe';
+import EducationSection from './sections/EducationSection';
 
 const App = () => {
   return (
     <>
       <Navbar />
       <Hero />
-      <FeatureCards />
+      <AboutMe />
+      <EducationSection />
+      {/* <FeatureCards /> */}
       <ExperienceSection />
       <TechStack />
       <Contact />

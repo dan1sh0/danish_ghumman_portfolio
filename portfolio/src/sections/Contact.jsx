@@ -59,7 +59,7 @@ const Contact = () => {
     return (
         <section id="contact" className="flex-center section-padding">
             <div className="w-full h-full md:px-10 px-5">
-                <TitleHeader title="Contact Me" sub="Get in touch" />
+                <TitleHeader title="Contact Me" sub="📲Get in touch" />
                 <div className="mt-16 grid-12-cols">
 
                     {/* Left Side - Contact Form */}
@@ -100,7 +100,7 @@ const Contact = () => {
                                         rows={6}
                                         value={formData.message}
                                         onChange={handleChange}
-                                        placeholder="Tell me about your project..."
+                                        placeholder="Feel free to reach out with any questions or opportunities!"
                                         required
                                     />
                                 </div>
