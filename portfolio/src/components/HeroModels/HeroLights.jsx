@@ -1,43 +1,42 @@
-import { ReactThreeFiber } from "@react-three/fiber";
+import { RectAreaLight } from 'three';
 
 const HeroLights = () => {
     return (
         <>
-            {/* Ambient light for base brightness */}
-            <ambientLight intensity={0.4} />
+            {/* --- Main Monitor Glow --- */}
+            {/* A strong but soft light simulating the screen's emission */}
+            <rectAreaLight
+                width={4}
+                height={3}
+                intensity={10}
+                color={"#6ab1ff"} // A stronger, cool blue light
+                position={[1, 1, -2]} // Positioned closer to the desk and monitor
+                rotation={[0, 3.5, 0]}
+            />
 
-            {/* Vibrant colored spotlights */}
-            <spotLight
-                position={[10, 20, 10]}
-                angle={0.5}
-                penumbra={1}
-                intensity={2}
-                color="#ff4ecd"
-                castShadow
-            />
-            <spotLight
-                position={[-10, 15, 10]}
-                angle={0.6}
-                penumbra={1}
-                intensity={1.5}
-                color="#00eaff"
-                castShadow
-            />
-            {/* Rim light for glow effect */}
+            {/* --- Under-Desk LED Strip (Purple) --- */}
+            {/* Increased intensity and adjusted position for a more visible glow */}
             <pointLight
-                position={[0, 10, -10]}
-                intensity={1.2}
-                color="#fff176"
+                intensity={1}
+                color={"#9370db"} // Medium Purple
+                position={[1, -1, -1]} // Lower and closer to the desk
+                distance={12}
             />
 
-            {/* Subtle fill light */}
-            <pointLight
-                position={[0, 2, 10]}
-                intensity={0.7}
-                color="#ffffff"
+            {/* --- Accent Room Light (Red/Orange) --- */}
+            {/* A soft, warm light to fill the room from a corner */}
+            <spotLight
+                intensity={4}
+                color={"#ff4500"}
+                position={[-5, 6, 5]}
+                angle={0.3}
+                penumbra={1}
+                distance={20}
             />
 
-
+            {/* --- Soft Ambient Fill Light --- */}
+            {/* Increased intensity to make shadows less harsh */}
+            <ambientLight intensity={0.3} />
         </>
     )
 }

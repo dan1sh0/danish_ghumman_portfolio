@@ -22,9 +22,9 @@ const navLinks = [
 ];
 
 const words = [
-  { text: "Ideas", imgPath: "/images/ideas.svg" },
-  { text: "Concepts", imgPath: "/images/concepts.svg" },
-  { text: "Designs", imgPath: "/images/designs.svg" },
+  { text: "Building", imgPath: "/images/ideas.svg" },
+  { text: "Creativity", imgPath: "/images/concepts.svg" },
+  { text: "Collaboration", imgPath: "/images/designs.svg" },
   { text: "Code", imgPath: "/images/code.svg" },
 ];
 
@@ -103,7 +103,7 @@ const techStackImgs = [
     imgPath: "/images/logos/node.png",
   },
   {
-    name: "Interactive Developer",
+    name: "Three.js",
     imgPath: "/images/logos/three.png",
   },
   {
@@ -114,31 +114,31 @@ const techStackImgs = [
 
 const techStackIcons = [
   {
-    name: "React Developer",
+    name: "React",
     modelPath: "/models/react_logo-transformed.glb",
     scale: 1,
     rotation: [0, 0, 0],
   },
   {
-    name: "Python Developer",
+    name: "Python ",
     modelPath: "/models/python-transformed.glb",
     scale: 0.8,
     rotation: [0, 0, 0],
   },
   {
-    name: "Backend Developer",
-    modelPath: "/models/node-transformed.glb",
-    scale: 5,
-    rotation: [0, -Math.PI / 2, 0],
+    name: "Java",
+    modelPath: "/models/java.glb",
+    scale: 1.5,
+    rotation: [0, 0, 0],
   },
   {
-    name: "Interactive Developer",
+    name: "Three.js",
     modelPath: "/models/three.js-transformed.glb",
     scale: 0.05,
     rotation: [0, 0, 0],
   },
   {
-    name: "Project Manager",
+    name: "Git",
     modelPath: "/models/git-svg-transformed.glb",
     scale: 0.05,
     rotation: [0, -Math.PI / 4, 0],
@@ -148,38 +148,37 @@ const techStackIcons = [
 const expCards = [
   {
     review: "Adrian brought creativity and technical expertise to the team, significantly improving our frontend performance. His work has been invaluable in delivering faster experiences.",
-    imgPath: "/images/exp1.png",
-    logoPath: "/images/logo1.png",
-    title: "Frontend Developer",
-    date: "January 2023 - Present",
+    imgPath: "/images/pncbank.png",
+    logoPath: "/images/PNC.png",
+    title: "Software Engineer Intern",
+    date: "May 2024 - August 2024",
     responsibilities: [
-      "Developed and maintained user-facing features for the Hostinger website.",
-      "Collaborated closely with UI/UX designers to ensure seamless user experiences.",
-      "Optimized web applications for maximum speed and scalability.",
+      "Mitigated security vulnerabilities in PNC’s $950M Online Banking platform using Java, Cucumber, and Selenium, reducing risk for 11M users and boosting platform trust.",
+      "Enhanced error handling in Angular and TypeScript to improve Cash Flow Insights for 300k users, increasing customer satisfaction.",
+      "Boosted accessibility compliance by 30% through screen reader improvements using TypeScript and axe DevTools, enhancing inclusivity.",
+      ,
     ],
   },
   {
     review: "Adrian’s contributions to Docker's web applications have been outstanding. He approaches challenges with a problem-solving mindset.",
-    imgPath: "/images/exp2.png",
-    logoPath: "/images/logo2.png",
-    title: "Full Stack Developer",
-    date: "June 2020 - December 2023",
+    imgPath: "/images/lrdc_full.png",
+    logoPath: "/images/lrdc.png",
+    title: "Software Engineer Intern",
+    date: "October  2023 - April 2024",
     responsibilities: [
-      "Led the development of Docker's web applications, focusing on scalability.",
-      "Worked with backend engineers to integrate APIs seamlessly with the frontend.",
-      "Contributed to open-source projects that were used with the Docker ecosystem.",
+      "Developed real-time voice gender and age recognition for English- and Spanish-speaking families using supervised learning models. achieving 88% accuracy in distinguishing parent and child voices.",
+      "Enhanced data processing efficiency by developing a custom algorithm with PyTorch and TensorFlow, reducing voice data labeling time by 50% and accelerating project timelines.",
     ],
   },
   {
     review: "Adrian’s work on Appwrite’s mobile app brought a high level of quality and efficiency. He delivered solutions that enhanced our mobile experience & meet our product goals.",
-    imgPath: "/images/exp3.png",
-    logoPath: "/images/logo3.png",
-    title: "React Native Developer",
-    date: "March 2019 - May 2020",
+    imgPath: "/images/pittfull.png",
+    logoPath: "/images/pitt.png",
+    title: "Junior Salesforce Administrator",
+    date: "May 2023 - Aug 2023",
     responsibilities: [
-      "Built cross-platform mobile apps using React Native, integrating with Appwrite's backend services.",
-      "Improved app performance and user experience through code optimization and testing.",
-      "Coordinated with the product team to implement features based on feedback.",
+      "Enhanced access control for 1,000+ users by implementing multi-tiered authentication protocols in Salesforce.",
+      "Improved data workflows and accuracy by classifying and resolving over 300 duplicate records using SOQL.",
     ],
   },
 ];

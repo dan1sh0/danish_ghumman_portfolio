@@ -19,7 +19,7 @@ const TechIcon = ({ model }) => {
 
     // way to change color of the model to fit the background better 
     useEffect(() => {
-        if (model.name === 'Interactive Developer') {
+        if (model.name === 'Three.js') {
             scene.scene.traverse((child) => {
                 if (child.isMesh && child.name === 'Object_5') {
                     child.material = new THREE.MeshStandardMaterial({
@@ -43,6 +43,12 @@ const TechIcon = ({ model }) => {
         <Canvas>
             <ambientLight intensity={0.5} />
             <directionalLight position={[5, 5, 5]} intensity={1} />
+            <spotLight
+                position={[10, 15, 10]}
+                angle={0.3}
+                penumbra={1}
+                intensity={2}
+            />
             <Environment preset="city" />
             <OrbitControls enableZoom={false} />
             <Float speed={5.5} rotationIntensity={0.5} floatIntensity={2}>

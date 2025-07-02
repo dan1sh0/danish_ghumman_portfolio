@@ -3,12 +3,11 @@ import { Canvas } from '@react-three/fiber'
 import { OrbitControls, useProgress, Html } from '@react-three/drei'
 import { EffectComposer, Bloom } from '@react-three/postprocessing'
 import { useMediaQuery } from 'react-responsive'
-import { Room } from './Room.jsx'
-import { OptimizedRoom } from './Optimized-room.jsx'
-import { Pokemon_room } from './Pokemon_room.jsx'
+//import { Room } from './Room.jsx'
 import HeroLights from './HeroLights.jsx'
 import Particles from './Particles.jsx'
-import { Game_room } from './Gaming_room.jsx'
+
+import { Gaming_Room } from './Gaming_room.jsx'
 
 function Loader() {
   const { progress } = useProgress()
@@ -20,38 +19,44 @@ const HeroExperience = () => {
     const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
     
     return (
-        <Canvas camera={{ position: [0, 18, 30], fov: 45 }}>
+        <Canvas camera={{ position: [200, 40, 40], fov: 55 }}>
           
-            <HeroLights />
-            <Particles  count = {100}/>
+            
+           
 
-             {/* Bloom effect for glow */}
+             {/* Bloom effect to make the lights glow */}
              <EffectComposer>
-                <Bloom luminanceThreshold={0.2} luminanceSmoothing={0.9} intensity={1.2} />
+                <Bloom 
+                  luminanceThreshold={0.1} // Lower threshold to catch more light
+                  luminanceSmoothing={0.9} 
+                  intensity={0.8} // A bit more intense bloom
+                  mipmapBlur 
+                />
             </EffectComposer>
 
             <OrbitControls
                 enableZoom={true}
-                enablePan={true}
-                enableRotate={true}
-                autoRotate={false}
-                maxDistance={40}
-                minDistance={10}
-                minPolarAngle={0}
-                maxPolarAngle={Math.PI}
-                target={[0, 1, 0]}
+                enablePan={!isTablet}
+                
+                maxDistance={35}
+                minDistance={8}
+                minPolarAngle={Math.PI / 5} // max angle for vertical rotation
+                maxPolarAngle={Math.PI / 1.8} // min angle for vertical rotation
+                
             />
-
+            <Suspense fallback={<Loader />}>
             <group
                   scale={isMobile ? 0.4 : 0.6}
-                  position={[0, -3, 0]}
-                  rotation={[0, -Math.PI/4, 0]}
+                  position={[0, -4, 0]}
+                  rotation={[0, -Math.PI / 4, 0]}
               >
-                <Suspense fallback={<Loader />}>
-                <Game_room/>
-                </Suspense>
+                
+                <HeroLights />
+                    <Gaming_Room />
+                    {/* <Particles count={150} /> */}
+                
               </group>
-            
+              </Suspense>
             
         </Canvas>
     )

@@ -15,7 +15,7 @@ const Hero = () => {
             ".hero-text h1",
             //adjust stagger to make the animation smoother or faster
             { y: 50, opacity: 0 },
-            { y: 0, opacity: 1, stagger: 0.8, duration: 1, ease: "power2.inOut" }
+            { y: 0, opacity: 1, stagger: 1, duration: 0.5, ease: "power2.inOut" }
         );
     }, []);
 
@@ -32,7 +32,7 @@ const Hero = () => {
                     <div className="flex flex-col gap-7">
                         <div className="hero-text">
                             <h1>
-                                Shaping
+                                Passionate About
                                 <span className="slide">
                                     <span className="wrapper">
                                         {words.map((word, index) => (
@@ -45,18 +45,18 @@ const Hero = () => {
                                                     alt={word.text}
                                                     className="xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-white-50"
                                                 />
-                                                <span className="text-white-50 text-xl md:text-2xl font-semibold">{word.text}</span>
+                                                <span>{word.text}</span>
                                             </span>
                                         ))}
                                     </span>
                                 </span>
                             </h1>
-                            <h1>into Real Projects</h1>
-                            <h1>that Deliver Results</h1>
+                            <h1>Crafting Clean, Scalable Code</h1>
+                            <h1>that Drives Real Impact</h1>
                         </div>
 
                         <p className="text-white-50 md:text-xl relative z-10 pointer-events-none">
-                            Hi, I'm Danish, a software engineer based in Austin Tx
+                            Hi, I'm Danish! Recent CS Graduate & Software Engineer
                         </p>
 
                         <Button

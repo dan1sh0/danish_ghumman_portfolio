@@ -1,9 +1,10 @@
 import React from 'react'
 import TitleHeader from '../components/TitleHeader'
-import ContactExperience from '../components/ContactExperience'
+import ContactExperience from '../components/Models/contact/ContactExperience'
 import emailjs from '@emailjs/browser'
 import { useRef } from 'react'
 import { useState } from 'react'
+import { Computer } from '../components/Models/contact/Computer'
 
 
 
