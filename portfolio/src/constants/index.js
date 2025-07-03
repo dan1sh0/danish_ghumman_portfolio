@@ -27,10 +27,6 @@ const navLinks = [
     link: "#education",
   },
   {
-    name: "Work",
-    link: "#work",
-  },
-  {
     name: "Experience",
     link: "#experience",
   },

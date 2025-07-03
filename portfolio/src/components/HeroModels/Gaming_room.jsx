@@ -7,16 +7,38 @@ Source: https://sketchfab.com/3d-models/gaming-room-f344194edece414fb0ead7993cf6
 Title: Gaming room
 */
 
-import React from 'react'
+import React, { useMemo } from 'react'
 import { useGLTF } from '@react-three/drei'
+import { useLoader } from '@react-three/fiber'
+import { TextureLoader, MeshStandardMaterial } from 'three'
+import * as THREE from 'three'
 
 export function Gaming_Room(props) {
   const { nodes, materials } = useGLTF('models/gaming_room.glb')
+  const customScreenTexture = useLoader(TextureLoader, '/images/coding.png')
+
+  // Use useMemo to safely create the custom material
+  const screenMaterial = useMemo(() => {
+    if (materials['Material.011']) {
+      const mat = materials['Material.011'].clone()
+      mat.map = customScreenTexture
+      mat.needsUpdate = true
+      return mat
+    }
+    // fallback: just use a new MeshStandardMaterial if not found
+    return new MeshStandardMaterial({ map: customScreenTexture })
+  }, [materials, customScreenTexture])
+
+  // Custom vibrant materials
+  const wallMaterial = new THREE.MeshStandardMaterial({ color: '#2d1457', roughness: 0.4, metalness: 0.2 }); // Deep purple
+  const couchMaterial = new THREE.MeshStandardMaterial({ color: '#3b82f6', roughness: 0.2, metalness: 0.5 }); // Bright blue
+  const deskMaterial = new THREE.MeshStandardMaterial({ color: '#b8860b', roughness: 0.3, metalness: 0.4 }); // Warm gold wood
+
   return (
     <group {...props} dispose={null}>
       <group position={[0, 11.058, -13.164]} scale={[18.498, 0.198, 23.431]}>
         <mesh geometry={nodes.Object_4.geometry} material={materials.External_Floor_Arizona} />
-        <mesh geometry={nodes.Object_5.geometry} material={materials.tembok} />
+        <mesh geometry={nodes.Object_5.geometry} material={wallMaterial} />
       </group>
       <group position={[-16.23, 9.607, -8.941]} scale={[0.098, 1.451, 3.091]}>
         <mesh geometry={nodes.Object_13.geometry} material={materials['Material.012']} />
@@ -29,7 +51,7 @@ export function Gaming_Room(props) {
       </group>
       <group position={[-13.53, 7.294, -45.375]} rotation={[Math.PI / 2, 0, 0]} scale={[0.07, 0.021, 0.07]}>
         <mesh geometry={nodes.Object_20.geometry} material={materials['Material.004']} />
-        <mesh geometry={nodes.Object_21.geometry} material={materials['Material.011']} />
+        <mesh geometry={nodes.Object_21.geometry} material={screenMaterial} />
       </group>
       <group position={[-12.982, 7.046, -9.077]} scale={[1.283, 0.027, 3.649]}>
         <mesh geometry={nodes.Object_23.geometry} material={materials.mouse_pad} />
@@ -45,11 +67,11 @@ export function Gaming_Room(props) {
         <mesh geometry={nodes.Object_35.geometry} material={materials.key_caps} />
       </group>
       <group position={[15.331, 9.73, 20.669]} rotation={[0, Math.PI / 2, 0]} scale={[2.146, 9.572, 6.627]}>
-        <mesh geometry={nodes.Object_39.geometry} material={materials.kayu} />
+        <mesh geometry={nodes.Object_39.geometry} material={deskMaterial} />
         <mesh geometry={nodes.Object_40.geometry} material={materials.pintu_lemari_kecil} />
       </group>
       <group position={[12.496, 2.367, -10.056]} rotation={[-Math.PI, 0, -Math.PI]} scale={[3.359, 2.244, 8.934]}>
-        <mesh geometry={nodes.Object_42.geometry} material={materials.sofa} />
+        <mesh geometry={nodes.Object_42.geometry} material={couchMaterial} />
         <mesh geometry={nodes.Object_43.geometry} material={materials.pintu_lemari_kecil} />
       </group>
       <group position={[15.349, 24.005, 21.391]} rotation={[0, Math.PI / 2, 0]} scale={[1.281, 1.281, 5.268]}>

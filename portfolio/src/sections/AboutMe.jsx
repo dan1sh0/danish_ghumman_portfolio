@@ -48,12 +48,17 @@ const AboutMe = () => {
                     {/* Right: About Me Text */}
                     <div className="flex flex-col gap-5 about-text" ref={textRef}>
                         <h2 className="font-semibold md:text-5xl text-3xl text-white">About Me</h2>
-                        <p className="text-white-50 md:text-xl text-lg">
-                            Hi! I'm Danish, a recent Computer Science graduate and current Master's student. I'm passionate about building things, learning new technologies, and tackling real-world problems. I'm excited to bring my curiosity and drive to a software engineering role!
+                        <p className="text-white-50 md:text-lg text-lg">
+                            Hi, I’m Danish, a full-stack developer and Georgia Tech master’s student specializing in AI. My journey began after pivoting from physical therapy in college. Since then, I've gained experience through 3 internships and shipped web/AI-driven projects through coursework and hands-on builds.
                         </p>
                         <p className="text-white-50 md:text-lg text-base">
-                            I love collaborating with others, exploring new ideas, and always pushing myself to grow. Let's connect and build something amazing together!
+                            I love exploring new ideas, and always pushing myself to grow. Let's connect and build something amazing together!
                         </p>
+                        <p className="text-white-50 md:text-lg text-base">
+                            When I’m not coding, you’ll find me at the gym, on the soccer field, or catching up with friends.
+                        </p>
+
+
                     </div>
                 </div>
             </div>

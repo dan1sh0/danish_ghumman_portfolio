@@ -46,11 +46,12 @@ const HeroExperience = () => {
             />
             <Suspense fallback={<Loader />}>
             <group
-                  scale={isMobile ? 0.4 : 0.6}
+                  scale={isMobile ? 0.35 : 0.45}
                   position={[0, -4, 0]}
                   rotation={[0, -Math.PI / 4, 0]}
               >
-                
+                {/* Add a subtle environment light for realism */}
+                <ambientLight intensity={0.15} />
                 <HeroLights />
                     <Gaming_Room />
                     {/* <Particles count={150} /> */}

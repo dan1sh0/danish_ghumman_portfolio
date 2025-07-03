@@ -6,9 +6,9 @@ const Button = ({ text, className, id }) => {
       onClick={(e) => {
         e.preventDefault();
 
-        // how the button works, attached to the counter section below
-        // we can change this if we dont want to have the counter section 
-        const target = document.getElementById('counter');
+        // how the button works, attached to the about section below
+        // we can change this if we dont want to have the about section 
+        const target = document.getElementById('about');
         if (target && id) {
           const offset = window.innerHeight * 0.15;
           const targetPosition = target.getBoundingClientRect().top + window.scrollY - offset;
