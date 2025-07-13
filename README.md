@@ -58,7 +58,7 @@ A modern, interactive portfolio website showcasing my skills, experience, and pr
 - **React Countup 6.5.3** - Animated number counters
 - **EmailJS Browser 4.4.1** - Contact form functionality
 
-### Development Tools
+
 - **ESLint 9.25.0** - Code linting and formatting
 - **TypeScript Support** - Type definitions for React
 
